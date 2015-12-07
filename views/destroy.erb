@@ -1,0 +1,23 @@
+<head>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../normalize.css">
+  <link rel="stylesheet" href="../skeleton.css">
+
+</head>
+
+<h5>Destroy '<%= @item.name %>?'</h5>
+
+<form action="/items/destroy" method="post">
+  <input type="hidden" name="id" value="<%= @item.name %>">
+  <input type="submit" value="Destroy item">
+</form>
+
+<p>
+  <a href="/items">Return to Your List</a>
+</p>
+
+<p>
+  <a href="/logout">Log out.</a>
+</p>

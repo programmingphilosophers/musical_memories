@@ -1,0 +1,46 @@
+<div id='list'>
+
+  <a href='/items/create'>Create Item</a>
+
+  <table>
+    <thead>
+      <th>
+        Name
+      </th>
+      <th>
+        Quantity
+      </th>
+      <th>
+        Update
+      </th>
+      <th>
+        Destroy
+      </th>
+    </thead>
+
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td>
+            <span title="<%= item.whenithappened %>">
+              <%= item.name %>
+            </span>
+          </td>
+          <td>
+            <%= item.quantity %>
+          </td>
+          <td>
+            <a href='/items/update/<%= item.id %>'>Update</a>
+          </td>
+          <td>
+            <a href='/items/destroy/<%= item.id %>'>Destroy</a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p>
+    <a href="/logout">Log out.</a>
+  </p>
+</div>

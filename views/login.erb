@@ -1,0 +1,25 @@
+<!-- Login:
+User's email
+User's password
+Submit Box -->
+
+<h5>
+  <% if @message %>
+    <strong><%= @message %></strong>
+  <% end %>
+</h5>
+
+<form action="/enter" method="post">
+
+  <fieldset>
+    <legend>Log In:</legend>
+    <div class="form-group">
+      <input type='text' name='user_name' placeholder="Username" id='user_email'>
+    </div>
+    <div class="form-group">
+      <input type='password' name='password' placeholder="Password" id='user_password'>
+    </div>
+    <input type="submit" value="Submit" id='submit_button'>
+  </fieldset>
+
+</form>

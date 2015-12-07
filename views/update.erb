@@ -1,0 +1,27 @@
+<head>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../normalize.css">
+  <link rel="stylesheet" href="../skeleton.css">
+
+</head>
+
+<h5>Update Item '<%= @item.name %>':</h5>
+
+<form action="/items/update" method="post">
+  <fieldset>
+    <input type="hidden" name="id" value="<%= @item.id %>">
+    <input type="text" name="item[name]" value="<%= @item.name %>">
+    <input type="text" name="item[quantity]" value="<%= @item.quantity %>">
+    <input type="submit"></input>
+  </fieldset>
+</form>
+
+<p>
+  <a href="/items">Return to Your List</a>
+</p>
+
+<p>
+  <a href="/logout">Log out.</a>
+</p>
