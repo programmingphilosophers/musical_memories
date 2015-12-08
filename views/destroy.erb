@@ -7,15 +7,15 @@
 
 </head>
 
-<h5>Destroy '<%= @item.name %>?'</h5>
+<h5>Destroy '<%= @memory.name %>?'</h5>
 
-<form action="/items/destroy" method="post">
-  <input type="hidden" name="id" value="<%= @item.name %>">
-  <input type="submit" value="Destroy item">
+<form action="/memorys/destroy" method="post">
+  <input type="hidden" name="id" value="<%= @memory.id %>">
+  <input type="submit" value="Destroy Memory">
 </form>
 
 <p>
-  <a href="/items">Return to Your List</a>
+  <a href="/memorys">Return to Your List</a>
 </p>
 
 <p>

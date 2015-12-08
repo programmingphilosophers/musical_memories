@@ -3,24 +3,13 @@ User's email
 User's password
 User's password (confirmation)
 Submit Box -->
-<div id='registration'>
+<h5>Register</h5>
   <form action="/register" method="post">
-
-    <fieldset>
-      <legend>Registration</legend>
-      <div class="form-group">
         <input type='text' name='user_name' placeholder="Username" id='user_name'>
-      </div>
-      <div class="form-group">
+        <br>
         <input type='email' name='email' placeholder="E-Mail" id='user_email'>
-      </div>
-      <div class="form-group">
+        <br>
         <input type='password' name='password' placeholder="Password" id='user_password'>
-      </div>
-      <!-- Don't want to perform password confirmation comparison right now. -->
-      <!-- <input type='text' name='user[passwordConfirm]' placeholder="Re-Enter Password" id='password_confirmation'> -->
-      <input type="submit" value="Submit" id='submit_button'>
-    </fieldset>
-
+        <br>
+        <input type="submit" value="Submit" id='submit_button'>
   </form>
-</div>

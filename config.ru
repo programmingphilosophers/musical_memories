@@ -2,10 +2,10 @@
 require 'sinatra/base'
 
 require('./controllers/application')
-require('./controllers/item')
-require('./controllers/validations')
-require('./models/item')
-require('./models/validations')
+require('./controllers/memory')
+require('./controllers/user')
+require('./models/memory')
+require('./models/user')
 
-map('/') { run ValidationsController }
-map('/items') { run ItemController } # /items/name_of_route
+map('/') { run UserController }
+map('/memories') { run MemoryController } # /memorys/name_of_route

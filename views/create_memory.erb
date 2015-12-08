@@ -1,0 +1,33 @@
+<h5>Create Memory</h5>
+
+<P>
+
+<p>
+<%= @memory.album %>
+</p>
+
+<p>
+<%= @memory.artist %>
+</p>
+
+<form action="/memories/create_memory" method="post" id='results'>
+  <input type="text" name="memory[year]" placeholder="When did you listen to this?">
+  <br>
+  <input type="text" name="memory[setting]" placeholder="Where did you listen to it?">
+  <br>
+  <input type="text" name="memory[specific_song]" placeholder="Does one of the songs stand out?">
+  <br>
+  <input type="text" name="memory[who]" placeholder="Who was with you?">
+  <br>
+  <textarea type="text" name="memory[notes]" style="width: 300px; height: 150px;">
+  <br>
+  <input type="submit">
+</form>
+
+<p>
+  <a href="/memories">Return to Your List</a>
+</p>
+
+<p>
+  <a href="/logout">Log out.</a>
+</p>

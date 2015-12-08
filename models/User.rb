@@ -1,4 +1,4 @@
-class Validations < ActiveRecord::Base
+class User < ActiveRecord::Base
 
   include BCrypt
 
@@ -12,7 +12,7 @@ class Validations < ActiveRecord::Base
   end
 
   def self.authenticate(user_name, password)
-    current_user = Validations.find_by(user_name: user_name)
+    current_user = User.find_by(user_name: user_name)
     if (current_user != nil)
       if (current_user.password == password)
         return current_user

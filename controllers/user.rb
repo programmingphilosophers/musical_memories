@@ -1,4 +1,4 @@
-class ValidationsController < ApplicationController
+class UserController < ApplicationController
 
   def authorization_check
     if session[:current_user] == nil
@@ -16,7 +16,7 @@ class ValidationsController < ApplicationController
     authorization_check
     @user_name = session[:current_user].user_name
 
-    erb :'../items'
+    erb :'../memories'
   end
 
   get '/login' do
@@ -26,12 +26,12 @@ class ValidationsController < ApplicationController
   post '/enter' do
     tempUser = params[:user_name]
     tempPass = params[:password]
-    user = Validations.authenticate(tempUser, tempPass)
+    user = User.authenticate(tempUser, tempPass)
 
     if user
       session[:current_user] = user
       @message = 'Welcome back!'
-      redirect '../items'
+      redirect '../memories'
     else
       @message = 'Your password or account is incorrect'
       erb :login
@@ -54,14 +54,14 @@ class ValidationsController < ApplicationController
     # the create view. Notice the keys
     # being passed in along with the values.
     # Take these values and create a *new*
-    # instance of your item model.
-    # Assign it to a variable called @item
+    # instance of your memory model.
+    # Assign it to a variable called @memory
     # update the attributes withn the values
     # from params. Then save it!
     tempUser = params[:user_name]
     tempMail = params[:email]
     tempPass = params[:password]
-    new_user = Validations.new
+    new_user = User.new
     new_user.user_name = tempUser
     new_user.email = tempMail
     new_user.password=(tempPass)

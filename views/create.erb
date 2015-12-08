@@ -1,15 +1,18 @@
-<h5>Create item</h5>
+<h5>Create Memory</h5>
 
-<form action="/items/create" method="post">
-  <fieldset>
-    <input type="text" name="item[name]" placeholder="Item Name">
-    <input type="text" name="item[quantity]" placeholder="Item Quantity">
-    <input type="submit"></input>
-  </fieldset>
+<form id="search-form">
+    <input type="text" id="query" value="" class="form-control" placeholder="Artist"/>
+    <input type="submit" id="search" class="btn btn-primary" value="Search" />
+</form>
+
+<h5>Results:</h5>
+
+<form action="/memories/create" method="post" id='results'>
+
 </form>
 
 <p>
-  <a href="/items">Return to Your List</a>
+  <a href="/memories">Return to Your List</a>
 </p>
 
 <p>

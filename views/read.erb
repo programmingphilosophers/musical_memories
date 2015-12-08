@@ -1,14 +1,14 @@
 <div id='list'>
 
-  <a href='/items/create'>Create Item</a>
+  <a href='/memories/create'>Create Item</a>
 
   <table>
     <thead>
       <th>
-        Name
+        Album
       </th>
       <th>
-        Quantity
+        Artist
       </th>
       <th>
         Update
@@ -19,21 +19,21 @@
     </thead>
 
     <tbody>
-      <% @items.each do |item| %>
+      <% @memories.each do |memory| %>
         <tr>
           <td>
-            <span title="<%= item.whenithappened %>">
-              <%= item.name %>
+            <span title="<%= memory.whenithappened %>">
+              <%= memory.album %>
             </span>
           </td>
           <td>
-            <%= item.quantity %>
+            <%= memory.artist %>
           </td>
           <td>
-            <a href='/items/update/<%= item.id %>'>Update</a>
+            <a href='/memories/update/<%= memory.id %>'>Update</a>
           </td>
           <td>
-            <a href='/items/destroy/<%= item.id %>'>Destroy</a>
+            <a href='/memories/destroy/<%= memory.id %>'>Destroy</a>
           </td>
         </tr>
       <% end %>

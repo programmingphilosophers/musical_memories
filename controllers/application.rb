@@ -3,12 +3,12 @@ class ApplicationController < Sinatra::Base
   Bundler.require
 
   ActiveRecord::Base.establish_connection(
-    :database => 'shopping_list',
+    :database => 'musical_memories',
     :adapter => 'postgresql' #unless you're too hip ;)
   )
 
   enable :sessions
-  
+
   set :views, File.expand_path('../../views', __FILE__)
   set :public_dir, File.expand_path('../../public', __FILE__)
 
