@@ -1,13 +1,13 @@
 <h5>Create Memory</h5>
 
 <form action="/memories/create_memory" method="post" id='memory_creation'>
-  <input type="text" name="memory[specific_song]" placeholder="Does one of the songs stand out?">
+  <!-- <input type="hidden" name="_method" value="put"> -->
+
+  <input type="text" name="memory[specific_song]" placeholder="Specific song?">
   <br>
-  <input type="text" name="memory[year]" placeholder="When did you listen to this?">
+  <input type="text" name="memory[year]" placeholder="When?">
   <br>
-  <input type="text" name="memory[setting]" placeholder="Where did you listen to it?">
-  <br>
-  <input type="text" name="memory[who]" placeholder="Who was with you?">
+  <input type="text" name="memory[setting]" placeholder="Where?">
   <br>
   <input type="text" name="memory[notes]" placeholder="Write about your memory here." id='blobbox'>
   <br>

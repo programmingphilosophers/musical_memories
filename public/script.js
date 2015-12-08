@@ -14,15 +14,11 @@ $(document).ready(function () {
       });
   };
 
-  var temp_album = [];
-  var temp_artist = [];
-
   var searchAlbums = function (query) {
       $.ajax({
           url: 'https://api.spotify.com/v1/search?q=artist:' + query + '&type=album&limit=10',
           data: 'json',
           success: function (data) {
-            temp_album = [];
             $('#results').html('');
             $('#results').append('<h5>Results</h5>');
             console.log('winner!');
@@ -30,22 +26,15 @@ $(document).ready(function () {
 
             for (var i = 0; i < data.albums.items.length; i++) {
 
-              var temp_result = '<form action="/memories/create" method="post">' + '<input type="hidden" name="memory[album]" value="' + data.albums.items[i].name + '">' + '<input type="hidden" name="memory[artist]" value="' + query + '">' + data.albums.items[i].name + '<br>' + '<img src="' + data.albums.items[i].images[1].url + '"><br>' + '<input type="submit" value="Begin Memory"></form>';
+              var temp_result = '<form action="/memories/create" method="post">' + '<input type="hidden" name="memory[is_new]" value="true">' + '<input type="hidden" name="memory[album]" value="' + data.albums.items[i].name + '">' + '<input type="hidden" name="memory[artist]" value="' + query + '">' + data.albums.items[i].name + '<br>' + '<img src="' + data.albums.items[i].images[1].url + '"><br>' + '<input type="submit" value="Begin Memory"></form>';
 
               // var temp_result = '<p>' + data.albums.items[i].name + '<br>' + '<img src="' + data.albums.items[i].images[1].url + '"></p>';
-
               $('#results').append(temp_result);
 
-              temp_album.push(data.albums.items[i].name);
-              temp_artist.push(query);
             }
           }
       });
   };
-
-  $('.falalalala').click(function() {
-    console.log('falalalala');
-  });
 
   document.getElementById('search-form').addEventListener('submit', function (e) {
       e.preventDefault();
