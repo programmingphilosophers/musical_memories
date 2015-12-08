@@ -30,31 +30,37 @@ class MemoryController < ApplicationController
   post '/create' do
     authorization_check
 
+    # @memory.whenithappened = Time.now
     @memory = Memory.new(params[:memory])
+    # @memory.assign_attributes(params[:memory])
     @memory.save
-    # if @memory.save
-    #
-    #   # return view
-    #   @message = 'You memory was added!'
-    # end
-    erb :create_memory
+    if @memory.save
+
+      # return view
+      @message = 'You memory was added!'
+    end
+    redirect '/memories/create_memory'
   end
 
   get '/create_memory' do
     authorization_check
-    @memory = Memory.find(params[:id])
-    # return view
+
     erb :create_memory
   end
 
   post '/create_memory' do
     authorization_check
-    @memory = Memory.find(params[:id])
-    @memory.whenithappened = Time.now
-    @memory.assign_attributes(params[:memory])
 
-    @message = 'Your memory was created!'
-    erb :read
+    # @memory.whenithappened = Time.now
+    # @memory = Memory.new(params[:memory])
+    @memory.assign_attributes(params[:memory])
+    @memory.save
+    if @memory.save
+
+      # return view
+      @message = 'You memory was added!'
+    end
+    redirect :memories
   end
 
   #update
@@ -71,7 +77,7 @@ class MemoryController < ApplicationController
 
     @memory = Memory.find(params[:id])
     @memory.assign_attributes(params[:memory])
-    @memory.whenithappened = Time.now
+    # @memory.whenithappened = Time.now
     @memory.save
     # return view
     @message = 'Your memory was updated!'

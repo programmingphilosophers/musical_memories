@@ -22,9 +22,7 @@
       <% @memories.each do |memory| %>
         <tr>
           <td>
-            <span title="<%= memory.whenithappened %>">
-              <%= memory.album %>
-            </span>
+            <%= memory.album %>
           </td>
           <td>
             <%= memory.artist %>

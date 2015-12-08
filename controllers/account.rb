@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class AccountController < ApplicationController
 
   def authorization_check
     if session[:current_user] == nil
@@ -24,9 +24,9 @@ class UserController < ApplicationController
   end
 
   post '/enter' do
-    tempUser = params[:user_name]
+    tempAccount = params[:user_name]
     tempPass = params[:password]
-    user = User.authenticate(tempUser, tempPass)
+    user = Account.authenticate(tempAccount, tempPass)
 
     if user
       session[:current_user] = user
@@ -58,11 +58,11 @@ class UserController < ApplicationController
     # Assign it to a variable called @memory
     # update the attributes withn the values
     # from params. Then save it!
-    tempUser = params[:user_name]
+    tempAccount = params[:user_name]
     tempMail = params[:email]
     tempPass = params[:password]
-    new_user = User.new
-    new_user.user_name = tempUser
+    new_user = Account.new
+    new_user.user_name = tempAccount
     new_user.email = tempMail
     new_user.password=(tempPass)
     new_user.save
