@@ -24,6 +24,7 @@ $(document).ready(function () {
           success: function (data) {
             temp_artist = query;
             $('#results').html('');
+            $('#write_mem').html('');
             $('#results').append('<h5>Results</h5>');
             console.log('winner!');
             console.table(data.albums.items);
@@ -42,6 +43,7 @@ $(document).ready(function () {
   };
 
   $(document).on("click", "img", function() {
+    $('#write_mem').html('');
     $('#write_mem').append($(this).parent());
     $('#results').contents().remove();
     console.log(this.src);
