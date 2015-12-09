@@ -33,9 +33,7 @@ class MemoryController < ApplicationController
 
     @memory = Memory.new(params[:memory])
     @memory.user_id = @user_id
-    binding.pry
     @memory.save
-    binding.pry
     if @memory.save
 
       # return view
