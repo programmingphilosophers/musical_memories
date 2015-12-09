@@ -13,8 +13,8 @@ class MemoryController < ApplicationController
     # 1. get a list of all memory models
     # and set it to the @memories variable
     authorization_check
-
-    @memories = Memory.all
+    @user_id = session[:current_user].id
+    @memories = Memory.where(user_id: @user_id)
 
     # return view
     erb :read
@@ -29,38 +29,19 @@ class MemoryController < ApplicationController
 
   post '/create' do
     authorization_check
+    @user_id = session[:current_user].id
 
-    # @memory.whenithappened = Time.now
     @memory = Memory.new(params[:memory])
-    # @memory.assign_attributes(params[:memory])
+    @memory.user_id = @user_id
+    binding.pry
     @memory.save
+    binding.pry
     if @memory.save
 
       # return view
       @message = 'You memory was added!'
     end
-    redirect '/memories/create_memory'
-  end
-
-  get '/create_memory' do
-    authorization_check
-
-    erb :create_memory
-  end
-
-  post '/create_memory' do
-    authorization_check
-
-    # @memory.whenithappened = Time.now
-    # @memory = Memory.new(params[:memory])
-    @memory.assign_attributes(params[:memory])
-    @memory.save
-    if @memory.save
-
-      # return view
-      @message = 'You memory was added!'
-    end
-    redirect :memories
+    erb :message
   end
 
   #update
@@ -92,6 +73,7 @@ class MemoryController < ApplicationController
     # return view
     erb :destroy
   end
+
   post '/destroy' do
     authorization_check
 
