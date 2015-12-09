@@ -1,11 +1,8 @@
 // Some code borrowed from Spotify code example: http://jsfiddle.net/JMPerez/0u0v7e1b/
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
-
-var temp_artist = [];
-
 $(document).ready(function () {
-
-  var index = 0;
+  
+  var temp_artist = [];
 
   // find template and compile it
   var resultsPlaceholder = document.getElementById('results')
