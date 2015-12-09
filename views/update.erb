@@ -11,17 +11,25 @@
 
 <form action="/memories/update" method="post">
     <input type="hidden" name="id" value="<%= @memory.id %>">
-    Album: <input type="text" name="memory[album]" value="<%= @memory.album %>">
+    Album:
     <br>
-    Artist: <input type="text" name="memory[artist]" value="<%= @memory.artist %>">
+    <input type="text" name="memory[album]" value="<%= @memory.album %>">
     <br>
-    When: <input type="text" name="memory[year]" value="<%= @memory.year %>">
+    Artist:
     <br>
-    Where: <input type="text" name="memory[setting]" value="<%= @memory.setting %>">
+    <input type="text" name="memory[artist]" value="<%= @memory.artist %>">
     <br>
-    Song: <input type="text" name="memory[specific_song]" value="<%= @memory.specific_song %>">
+    When:
     <br>
-    People: <input type="text" name="memory[who]" value="<%= @memory.who %>">
+    <input type="text" name="memory[year]" value="<%= @memory.year %>">
+    <br>
+    Where:
+    <br>
+    <input type="text" name="memory[setting]" value="<%= @memory.setting %>">
+    <br>
+    Song:
+    <br>
+    <input type="text" name="memory[specific_song]" value="<%= @memory.specific_song %>">
     <br>
     Recollections:
     <br>
