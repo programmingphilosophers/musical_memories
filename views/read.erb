@@ -1,44 +1,43 @@
-<div id='list'>
+<script type='text/javascript'>
+  var viewModel = <%= @memories.to_json %>;
+  console.log(viewModel);
+  var latest_year = 0;
+  var latest_index = 0;
+  var new_list = [];
 
-  <a href='/memories/create'>Create Item</a>
+  while (viewModel.length >= 1) {
+    for (var i = 0; i < viewModel.length; i++) {
+      if (viewModel[i].year > latest_year) {
+        latest_year = viewModel[i].year;
+        latest_index = i;
+      };
+    };
+    new_list.push(viewModel[latest_index]);
+    viewModel.splice(latest_index, 1);
+  }
+  console.log(new_list);
 
-  <table>
-    <thead>
-      <th>
-        Album
-      </th>
-      <th>
-        Artist
-      </th>
-      <th>
-        Update
-      </th>
-      <th>
-        Destroy
-      </th>
-    </thead>
+</script>
 
-    <tbody>
-      <% @memories.each do |memory| %>
-        <tr>
-          <td>
-            <%= memory.album %>
-          </td>
-          <td>
-            <%= memory.artist %>
-          </td>
-          <td>
-            <a href='/memories/update/<%= memory.id %>'>Update</a>
-          </td>
-          <td>
-            <a href='/memories/destroy/<%= memory.id %>'>Destroy</a>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <p>
-    <a href="/logout">Log out.</a>
-  </p>
+<div id="left">
+  Left.
 </div>
+
+<div id="right">
+  Right.
+</div>
+
+<div id="album-art">
+  Album art.
+</div>
+
+<div id="info-and-recollection">
+  Info and recollection.
+</div>
+
+<script type="text/javascript">
+  for (var i = 0; i < new_list.length; i++) {
+    
+    $('#album-art').html()
+  }
+</script>

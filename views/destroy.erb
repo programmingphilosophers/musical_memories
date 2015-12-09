@@ -7,17 +7,19 @@
 
 </head>
 
-<h5>Destroy '<%= @memory.album %>?'</h5>
+<div class="four offset-by-three columns">
+  <h5>Destroy '<%= @memory.album %>?'</h5>
 
-<form action="/memories/destroy" method="post">
-  <input type="hidden" name="id" value="<%= @memory.id %>">
-  <input type="submit" value="Destroy Memory">
-</form>
+  <form action="/memories/destroy" method="post">
+    <input type="hidden" name="id" value="<%= @memory.id %>">
+    <input type="submit" value="Destroy Memory">
+  </form>
 
-<p>
-  <a href="/memories">Return to Your List</a>
-</p>
+  <p>
+    <a href="/memories">Return to Your List</a>
+  </p>
 
-<p>
-  <a href="/logout">Log out.</a>
-</p>
+  <p>
+    <a href="/logout">Log out.</a>
+  </p>
+</div>

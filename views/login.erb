@@ -3,18 +3,20 @@ User's email
 User's password
 Submit Box -->
 
-<h5>
-  <% if @message %>
-    <strong><%= @message %></strong>
-  <% end %>
-</h5>
+<div class="four offset-by-three columns">
+  <h5>
+    <% if @message %>
+      <strong><%= @message %></strong>
+    <% end %>
+  </h5>
 
-<form action="/enter" method="post">
+  <form action="/enter" method="post">
 
-    <input type='text' name='user_name' placeholder="Username" id='user_email'>
-    <br>
-    <input type='password' name='password' placeholder="Password" id='user_password'>
-    <br>
-    <input type="submit" value="Submit" id='submit_button'>
+      <input type='text' name='user_name' placeholder="Username" id='user_email'>
+      <br>
+      <input type='password' name='password' placeholder="Password" id='user_password'>
+      <br>
+      <input type="submit" value="Submit" id='submit_button'>
 
-</form>
+  </form>
+</div>

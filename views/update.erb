@@ -7,41 +7,43 @@
 
 </head>
 
-<h5>Update Memory '<%= @memory.album %>':</h5>
+<div class="four offset-by-three columns">
+  <h5>Update Memory '<%= @memory.album %>':</h5>
 
-<form action="/memories/update" method="post">
-    <input type="hidden" name="id" value="<%= @memory.id %>">
-    Album:
-    <br>
-    <input type="text" name="memory[album]" value="<%= @memory.album %>">
-    <br>
-    Artist:
-    <br>
-    <input type="text" name="memory[artist]" value="<%= @memory.artist %>">
-    <br>
-    When:
-    <br>
-    <input type="text" name="memory[year]" value="<%= @memory.year %>">
-    <br>
-    Where:
-    <br>
-    <input type="text" name="memory[setting]" value="<%= @memory.setting %>">
-    <br>
-    Song:
-    <br>
-    <input type="text" name="memory[specific_song]" value="<%= @memory.specific_song %>">
-    <br>
-    Recollections:
-    <br>
-    <input type="text" name="memory[notes]" value="<%= @memory.notes %>" id='blobbox'>
-    <br>
-    <input type="submit">
-</form>
+  <form action="/memories/update" method="post">
+      <input type="hidden" name="id" value="<%= @memory.id %>">
+      Album:
+      <br>
+      <input type="text" name="memory[album]" value="<%= @memory.album %>">
+      <br>
+      Artist:
+      <br>
+      <input type="text" name="memory[artist]" value="<%= @memory.artist %>">
+      <br>
+      When:
+      <br>
+      <input type="text" name="memory[year]" value="<%= @memory.year %>">
+      <br>
+      Where:
+      <br>
+      <input type="text" name="memory[setting]" value="<%= @memory.setting %>">
+      <br>
+      Song:
+      <br>
+      <input type="text" name="memory[specific_song]" value="<%= @memory.specific_song %>">
+      <br>
+      Recollections:
+      <br>
+      <input type="text" name="memory[notes]" value="<%= @memory.notes %>" id='blobbox'>
+      <br>
+      <input type="submit">
+  </form>
 
-<p>
-  <a href="/memories">Return to Your List</a>
-</p>
+  <p>
+    <a href="/memories">Return to Your List</a>
+  </p>
 
-<p>
-  <a href="/logout">Log out.</a>
-</p>
+  <p>
+    <a href="/logout">Log out.</a>
+  </p>
+</div>

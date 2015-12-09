@@ -5,17 +5,10 @@ var temp_artist = [];
 
 $(document).ready(function () {
 
+  var index = 0;
+
   // find template and compile it
   var resultsPlaceholder = document.getElementById('results')
-
-  var fetchTracks = function (albumId, callback) {
-      $.ajax({
-          url: 'https://api.spotify.com/v1/albums/' + albumId,
-          success: function (response) {
-              callback(response);
-          }
-      });
-  };
 
   var searchAlbums = function (query) {
       $.ajax({
@@ -48,7 +41,7 @@ $(document).ready(function () {
     $('#results').contents().remove();
     console.log(this.src);
     console.log($(this).parent().text());
-    
+
     // I know this way of doing things isn't optimal, nor is this even the best way of undertaking this sub-optimal method.
 
     $(this).parent().append('<form action="/memories/create" method="post" id="memory_creation"><input type="hidden" name="memory[album]" value="' + $(this).parent().text() + '"><input type="hidden" name="memory[artist]" value="' + temp_artist + '"><input type="hidden" name="memory[img_url]" value="' + this.src + '"><input type="text" name="memory[specific_song]" placeholder="Song"><br><input type="text" name="memory[year]" placeholder="When?"><br><input type="text" name="memory[setting]" placeholder="Where?"><br><input type="text" name="memory[notes]" placeholder="Write about your memory here." id="blobbox"><br><input type="submit"></form>');
