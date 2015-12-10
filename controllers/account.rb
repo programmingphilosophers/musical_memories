@@ -16,7 +16,7 @@ class AccountController < ApplicationController
     authorization_check
 
 
-    erb :'../memories'
+    erb :portal
   end
 
   get '/login' do
