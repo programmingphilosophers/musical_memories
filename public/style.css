@@ -4,7 +4,7 @@
 
 #left {
   position: absolute;
-  top: 5%;
+  top: 10%;
   left: 5%;
   height: 24px;
   width: 24px;
@@ -13,7 +13,7 @@
 }
 #right {
   position: absolute;
-  top: 5%;
+  top: 10%;
   right: 5%;
   height: 24px;
   width: 24px;
@@ -24,7 +24,7 @@
 #nav {
   position: absolute;
   left: 5%;
-  top: 15%;
+  top: 20%;
   height: 24px;
   width: 24px;
   background: url("/ic_menu_black_24px.svg");
@@ -33,7 +33,7 @@
 #navitems {
   position: absolute;
   left: 5%;
-  top: 15%;
+  top: 20%;
   display: none;
 }
 
@@ -59,19 +59,5 @@
 }
 
 @media (max-width: 550px) {
-  .offset-by-one.column,
-  .offset-by-one.columns          { margin-left: 0%; }
-  .offset-by-three.column,
-  .offset-by-three.columns        { margin-left: 25%; }
-  .offset-by-seven.column,
-  .offset-by-seven.columns         { margin-left: 95%; }
 
-  .offset-by-one-third.column,
-  .offset-by-one-third.columns    { margin-left: 33.333333%; }
-
-  img { max-width: 80%; }
-  #album-art {
-    position: absolute;
-    width: 75%;
-  }
 }

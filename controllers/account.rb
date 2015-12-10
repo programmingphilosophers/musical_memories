@@ -50,28 +50,55 @@ class AccountController < ApplicationController
   end
 
   post '/register' do
-    # 2. Check the `params` hash and
-    # the create view. Notice the keys
-    # being passed in along with the values.
-    # Take these values and create a *new*
-    # instance of your memory model.
-    # Assign it to a variable called @memory
-    # update the attributes withn the values
-    # from params. Then save it!
+
     tempAccount = params[:user_name]
     tempMail = params[:email]
     tempPass = params[:password]
-    new_user = Account.new
-    new_user.user_name = tempAccount
-    new_user.email = tempMail
-    new_user.password=(tempPass)
-    new_user.save
+
+    if Account.where(user_name: tempAccount) == nil
+      new_user = Account.new
+      new_user.user_name = tempAccount
+      new_user.email = tempMail
+      new_user.password=(tempPass)
+      new_user.save
+    end
 
     if new_user.save
       session[:current_user] = new_user
       # return view
       @message = 'Your account was added!'
+    else
+      erb :registration
     end
     erb :message
+  end
+
+  get '/account_info' do
+    authorization_check
+    @user_name = session[:current_user].user_name
+    @user_email = session[:current_user].user_email
+    erb :account_info
+  end
+
+  get '/update_account' do
+    authorization_check
+
+    erb :update_account
+  end
+
+  post '/update_account' do
+    authorization_check
+
+    @user_id = session[:current_user].id
+    @user_now = Account.where(id: @user_id)
+    @user_now.email = params[:email]
+    @user_now.password=(params[:password])
+    @user_now.save
+
+    if @user_now.save
+
+      @message = 'Your account was added!'
+    end
+    erb :account_info
   end
 end

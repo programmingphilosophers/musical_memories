@@ -25,7 +25,7 @@
   <p><a href="/memories"><img src="/ic_home_black_24px.svg"></a></p>
   <p><a href="/memories/create"><img src="/ic_search_black_24px.svg"></a></p>
   <p><a href="/memories/mem_list"><img src="/ic_create_black_24px.svg"></a></p>
-  <p><a href="/account"><img src="/ic_account_box_black_24px.svg"></a></p>
+  <p><a href="/logout"><img src="/ic_open_in_new_black_24px.svg"></a></p>
 </div>
 
 <div id="left"></div>
@@ -35,7 +35,7 @@
 
 <script type="text/javascript">
   for (var i = 0; i < new_list.length; i++) {
-    var tempArt = '<div class="albumart" id="art' + i + '"><img src="' + new_list[i].img_url + '" style="max-width: ' + $('#album-art').width + 'px"></div>';
+    var tempArt = '<div class="albumart" id="art' + i + '"><img src="' + new_list[i].img_url + '" style="max-width: 80%"></div>';
 
     var tempMem = '<div class="albumcontent" id="album' + i + '"><h5>' + new_list[i].album + '</h5><p>' + new_list[i].artist + '<br>\"' + new_list[i].specific_song + '\"<br>' + new_list[i].setting + ', ' + new_list[i].year + '</p><p>' + new_list[i].notes + ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>';
 
@@ -68,6 +68,7 @@
   };
 
   $('#left').on("click", click_left);
+  jQuery( window ).on( "swiperight", click_left);
 
   var click_right = function() {
     if (mem_index + 1 < new_list.length) {
@@ -91,5 +92,5 @@
   };
 
   $('#right').on("click", click_right);
-
+  jQuery( window ).on( "swipeleft", click_right);
 </script>
