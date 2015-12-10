@@ -31,7 +31,7 @@ class AccountController < ApplicationController
     if user
       session[:current_user] = user
       @message = 'Welcome back!'
-      redirect '../memories'
+      redirect '/memories'
     else
       @message = 'Your password or account is incorrect'
       erb :login
