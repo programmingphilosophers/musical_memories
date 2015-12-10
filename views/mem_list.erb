@@ -1,0 +1,46 @@
+<div id="nav" class="one offset-by-one column"></div>
+<div id="navitems" class="one offset-by-one column">
+  <p><img src="/ic_menu_black_24px.svg"></p>
+  <p><a href="/memories"><img src="/ic_home_black_24px.svg"></a></p>
+  <p><a href="/memories/create"><img src="/ic_search_black_24px.svg"></a></p>
+  <p><a href="/memories/mem_list"><img src="/ic_create_black_24px.svg"></a></p>
+  <p><a href="/account"><img src="/ic_account_box_black_24px.svg"></a></p>
+</div>
+
+<div class="middle-content" style="top: 20%">
+  <table>
+    <thead>
+      <th>
+        Album
+      </th>
+      <th>
+        Artist
+      </th>
+      <th>
+        Update
+      </th>
+      <th>
+        Destroy
+      </th>
+    </thead>
+
+    <tbody>
+      <% @memories.each do |memory| %>
+        <tr>
+          <td>
+            <%= memory.album %>
+          </td>
+          <td>
+            <%= memory.artist %>
+          </td>
+          <td>
+            <a href='/memories/update/<%= memory.id %>'><img src="/ic_create_black_24px.svg"></a>
+          </td>
+          <td>
+            <a href='/memories/destroy/<%= memory.id %>'><img src="/ic_delete_black_24px.svg"></a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

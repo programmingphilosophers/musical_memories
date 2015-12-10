@@ -10,14 +10,17 @@ class MemoryController < ApplicationController
 
   #read (list)
   get '/' do
-    # 1. get a list of all memory models
-    # and set it to the @memories variable
     authorization_check
     @user_id = session[:current_user].id
+
     @memories = Memory.where(user_id: @user_id)
 
-    # return view
     erb :read
+  end
+
+  get '/list' do
+    @memories = Memory.where(user_id: @user_id)
+    return @memories.to_json
   end
 
   #create
@@ -35,11 +38,19 @@ class MemoryController < ApplicationController
     @memory.user_id = @user_id
     @memory.save
     if @memory.save
-
       # return view
       @message = 'You memory was added!'
     end
+
     erb :message
+  end
+
+  get '/mem_list' do
+    authorization_check
+    @user_id = session[:current_user].id
+    
+    @memories = Memory.where(user_id: @user_id)
+    erb :mem_list
   end
 
   #update
@@ -56,10 +67,12 @@ class MemoryController < ApplicationController
 
     @memory = Memory.find(params[:id])
     @memory.assign_attributes(params[:memory])
-    # @memory.whenithappened = Time.now
     @memory.save
-    # return view
-    @message = 'Your memory was updated!'
+    if @memory.save
+      # return view
+      @message = 'You memory was added!'
+    end
+
     erb :message
   end
 
@@ -68,7 +81,7 @@ class MemoryController < ApplicationController
     authorization_check
 
     @memory = Memory.find(params[:id])
-    # return view
+
     erb :destroy
   end
 
@@ -77,8 +90,9 @@ class MemoryController < ApplicationController
 
     @memory = Memory.find(params[:id])
     @memory.destroy
-    # return view
+
     @message = 'You memory was removed!'
+
     erb :message
   end
 

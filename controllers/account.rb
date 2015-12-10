@@ -2,14 +2,14 @@ class AccountController < ApplicationController
 
   def authorization_check
     if session[:current_user] == nil
-      redirect :not_authorized
+      redirect :portal
     else
       return true
     end
   end
 
-  get '/not_authorized' do
-    erb :not_authorized
+  get '/portal' do
+    erb :portal
   end
 
   get '/' do
