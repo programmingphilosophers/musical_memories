@@ -55,13 +55,11 @@ class AccountController < ApplicationController
     tempMail = params[:email]
     tempPass = params[:password]
 
-    if Account.where(user_name: tempAccount) == nil
       new_user = Account.new
       new_user.user_name = tempAccount
       new_user.email = tempMail
       new_user.password=(tempPass)
       new_user.save
-    end
 
     if new_user.save
       session[:current_user] = new_user
