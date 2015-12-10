@@ -4,10 +4,21 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="../normalize.css">
   <link rel="stylesheet" href="../skeleton.css">
-
+  <link rel="stylesheet" href="../style.css">
+  <script type="text/javascript" src='../script.js'></script>
+  <script type="text/javascript" src='../velocity.min.js'></script>
 </head>
 
-<div class="four offset-by-three columns">
+<div id="nav"></div>
+<div id="navitems">
+  <p><img src="/ic_menu_black_24px.svg"></p>
+  <p><a href="/memories"><img src="/ic_home_black_24px.svg"></a></p>
+  <p><a href="/memories/create"><img src="/ic_search_black_24px.svg"></a></p>
+  <p><a href="/memories/mem_list"><img src="/ic_create_black_24px.svg"></a></p>
+  <p><a href="/account"><img src="/ic_account_box_black_24px.svg"></a></p>
+</div>
+
+<div class="middle-content" style="top: 20%">
   <h5>Destroy '<%= @memory.album %>?'</h5>
 
   <form action="/memories/destroy" method="post">

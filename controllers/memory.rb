@@ -45,6 +45,14 @@ class MemoryController < ApplicationController
     erb :message
   end
 
+  get '/mem_list' do
+    authorization_check
+    @user_id = session[:current_user].id
+    
+    @memories = Memory.where(user_id: @user_id)
+    erb :mem_list
+  end
+
   #update
   get '/update/:id' do
     authorization_check
