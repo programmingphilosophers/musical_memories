@@ -48,7 +48,7 @@ class MemoryController < ApplicationController
   get '/mem_list' do
     authorization_check
     @user_id = session[:current_user].id
-    
+
     @memories = Memory.where(user_id: @user_id)
     erb :mem_list
   end
@@ -94,6 +94,8 @@ class MemoryController < ApplicationController
     @message = 'You memory was removed!'
 
     erb :message
+
+    #redirect '/path/to'
   end
 
 end

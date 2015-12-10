@@ -15,8 +15,8 @@ class AccountController < ApplicationController
   get '/' do
     authorization_check
     @user_name = session[:current_user].user_name
-
-    erb :'../memories'
+    erb :portal
+   #  erb :'../memories'
   end
 
   get '/login' do
@@ -31,7 +31,7 @@ class AccountController < ApplicationController
     if user
       session[:current_user] = user
       @message = 'Welcome back!'
-      redirect '../memories'
+      redirect '/memories'
     else
       @message = 'Your password or account is incorrect'
       erb :login
