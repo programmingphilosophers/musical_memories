@@ -68,6 +68,7 @@
   };
 
   $('#left').on("click", click_left);
+  jQuery( window ).on( "swiperight", click_left);
 
   var click_right = function() {
     if (mem_index + 1 < new_list.length) {
@@ -91,5 +92,5 @@
   };
 
   $('#right').on("click", click_right);
-
+  jQuery( window ).on( "swipeleft", click_right);
 </script>
