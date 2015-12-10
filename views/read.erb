@@ -68,7 +68,25 @@
   };
 
   $('#left').on("click", click_left);
-  jQuery( window ).on( "swiperight", click_left);
+  // jQuery( window ).on( "swiperight", click_left);
+
+  $('#album-art').swipe( {
+    //Generic swipe handler for all directions
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+      console.log("You swiped " + direction );
+      if (direction == 'left') {
+        click_right;
+      }
+      else if (direction == 'right') {
+        click_left;
+      }
+      else {
+
+      };
+    },
+    //Default is 75px, set to 0 for demo so any distance triggers swipe
+     threshold:30
+  });
 
   var click_right = function() {
     if (mem_index + 1 < new_list.length) {
@@ -92,5 +110,6 @@
   };
 
   $('#right').on("click", click_right);
-  jQuery( window ).on( "swipeleft", click_right);
+  // jQuery( window ).on( "swipeleft", click_right);
+
 </script>
