@@ -1,6 +1,6 @@
-/*#blobbox {
-  width: 50%;
-}*/
+html {
+  overflow: scroll;
+}
 
 #left {
   position: absolute;
@@ -56,9 +56,4 @@
   position: absolute;
   left: 20%;
   width: 60%;
-  white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
-}
-
-@media (max-width: 550px) {
-
 }
