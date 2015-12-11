@@ -26,6 +26,11 @@
   <p><a href="/memories/create"><img src="/ic_search_black_24px.svg"></a></p>
   <p><a href="/memories/mem_list"><img src="/ic_create_black_24px.svg"></a></p>
   <p><a href="/logout"><img src="/ic_open_in_new_black_24px.svg"></a></p>
+  <!-- <img src="/ic_menu_black_24px.svg">
+  <a href="/memories"><img src="/ic_home_black_24px.svg"></a>
+  <a href="/memories/create"><img src="/ic_search_black_24px.svg"></a>
+  <a href="/memories/mem_list"><img src="/ic_create_black_24px.svg"></a>
+  <a href="/logout"><img src="/ic_open_in_new_black_24px.svg"></a> -->
 </div>
 
 <div id="left"></div>
@@ -35,7 +40,7 @@
 
 <script type="text/javascript">
   for (var i = 0; i < new_list.length; i++) {
-    var tempArt = '<div class="albumart" id="art' + i + '"><img src="' + new_list[i].img_url + '" style="max-width: 80%"></div>';
+    var tempArt = '<div class="albumart" id="art' + i + '"><img src="' + new_list[i].img_url + '" style="max-width: 100%"></div>';
 
     var tempMem = '<div class="albumcontent" id="album' + i + '"><h5>' + new_list[i].album + '</h5><p>' + new_list[i].artist + '<br>\"' + new_list[i].specific_song + '\"<br>' + new_list[i].setting + ', ' + new_list[i].year + '</p><p>' + new_list[i].notes + ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>';
 
@@ -48,19 +53,19 @@
 
   var click_left = function() {
     if (mem_index - 1 > -1) {
-      $('#album-art').velocity({'left': '+=500px'}, 500);
+      $('#album-art').velocity({'left': '+=100px'}, 500);
       $('#art' + mem_index).velocity({'opacity': '-=1'}, 500);
       $('#album' + mem_index).velocity({'opacity': '-=1'}, 500);
       var id = setTimeout(function() {
         $('#art' + mem_index).css({'display': 'none'});
         $('#album' + mem_index).css({'display': 'none'});
-        $('#album-art').css({'left': '-=1000px'});
+        $('#album-art').css({'left': '-=200px'});
         mem_index -= 1;
         $('#art' + mem_index).css({'opacity': '0'});
         $('#album' + mem_index).css({'opacity': '0'});
         $('#art' + mem_index).css({'display': 'block'});
         $('#album' + mem_index).css({'display': 'block'});
-        $('#album-art').velocity({'left': '+=500px'}, 500);
+        $('#album-art').velocity({'left': '+=100px'}, 500);
         $('#art' + mem_index).velocity({'opacity': '+=1'}, 500);
         $('#album' + mem_index).velocity({'opacity': '+=1'}, 500);
       }, 600);
@@ -90,19 +95,19 @@
 
   var click_right = function() {
     if (mem_index + 1 < new_list.length) {
-      $('#album-art').velocity({'left': '-=500px'}, 500);
+      $('#album-art').velocity({'left': '-=100px'}, 500);
       $('#art' + mem_index).velocity({'opacity': '-=1'}, 500);
       $('#album' + mem_index).velocity({'opacity': '-=1'}, 500);
       var id = setTimeout(function() {
         $('#art' + mem_index).css({'display': 'none'});
         $('#album' + mem_index).css({'display': 'none'});
-        $('#album-art').css({'left': '+=1000px'});
+        $('#album-art').css({'left': '+=200px'});
         mem_index += 1;
         $('#art' + mem_index).css({'opacity': '0'});
         $('#album' + mem_index).css({'opacity': '0'});
         $('#art' + mem_index).css({'display': 'block'});
         $('#album' + mem_index).css({'display': 'block'});
-        $('#album-art').velocity({'left': '-=500px'}, 500);
+        $('#album-art').velocity({'left': '-=100px'}, 500);
         $('#art' + mem_index).velocity({'opacity': '+=1'}, 500);
         $('#album' + mem_index).velocity({'opacity': '+=1'}, 500);
       }, 600);

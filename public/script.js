@@ -48,19 +48,21 @@ $(document).ready(function () {
     $('#nav').css({'display': 'none'});
     $('#navitems').css({'opacity': '0', 'display': 'block'});
     $('#navitems').velocity({'opacity': '+=1'}, 500);
+    $('#left').velocity({'opacity': '-=1'}, 500);
   };
 
-  $('#nav').on("mouseenter", navon);
+  $('#nav').on("click", navon);
 
   var navoff = function() {
     $('#navitems').velocity({'opacity': '-=1'}, 250);
+    $('#left').velocity({'opacity': '+=1'}, 250);
     var navtimer = setTimeout(function() {
       $('#navitems').css({'display': 'none'});
       $('#nav').css({'display': 'block'});
     }, 300);
   };
 
-  $('#navitems').on("mouseleave", navoff);
+  $('#navitems').on("click", navoff);
 
   document.getElementById('search-form').addEventListener('submit', function (e) {
       e.preventDefault();

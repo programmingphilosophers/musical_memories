@@ -4,7 +4,7 @@
 
 #left {
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 5%;
   height: 24px;
   width: 24px;
@@ -13,7 +13,7 @@
 }
 #right {
   position: absolute;
-  top: 10%;
+  top: 50%;
   right: 5%;
   height: 24px;
   width: 24px;
@@ -24,7 +24,7 @@
 #nav {
   position: absolute;
   left: 5%;
-  top: 20%;
+  top: 10%;
   height: 24px;
   width: 24px;
   background: url("/ic_menu_black_24px.svg");
@@ -33,7 +33,8 @@
 #navitems {
   position: absolute;
   left: 5%;
-  top: 20%;
+  top: 10%;
+  width: 24px;
   display: none;
 }
 
