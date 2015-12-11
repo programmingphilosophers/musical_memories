@@ -1,3 +1,25 @@
+# HEROKU BUGS routes that work and don't
+# account controller work
+logout
+portal
+/ (goes to portal)
+login
+registration (but layout issues)
+# account dont work (and error mssgs)
+enter (from login) ("internal server error")
+register (404)
+account_info (redirect to portal)
+update_account (redirect to portal)
+# memories ctrlr. none work. all give 404 error
+/
+/list
+/create
+/mem_list
+/update/:id
+/update
+/destroy/:id
+/destroy
+
 # APPLICATION CONTROLLER
 * usual stuff.
 

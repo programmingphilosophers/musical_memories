@@ -14,9 +14,9 @@ class AccountController < ApplicationController
 
   get '/' do
     authorization_check
-
-
+    @user_name = session[:current_user].user_name
     erb :portal
+   #  erb :'../memories'
   end
 
   get '/login' do

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- windows ie (old) fix -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- so doesn't shrink on mobile and uses intended breakpoints -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- minified bootstrap ... did not include optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- my styles go after bootstrap -->
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Bootstrap</title>
+</head>
+
+<body>
+
+<!-- <header class="bgimage">
+   <div class="container">
+      <h1>Headline</h1>
+   </div> -->
+   <!-- end container --->
+<!-- </header>  -->
+
+<div class="container-fluid">
+
+<h1 class="text-center">Musical Memories</h1>
+<p>Bob Smith</p>
+
+<!-- data-interval="false" stops auto sliding -->
+<div class="carousel slide" data-interval="false" id="covers">
+
+   <ol class="carousel-indicators">
+      <li data-target="#covers" data-slide-to="0" class="active"></li>
+      <li data-target="#covers" data-slide-to="1"></li>
+      <li data-target="#covers" data-slide-to="2"></li>
+   </ol>
+
+   <div class="carousel-inner">
+
+      <div class="item active">
+         <img class="center-block" src="media/pearl_jam200px.jpg" alt="" />
+
+         <div class="table">
+            <table class="table table-hover">
+               <tr><td><h3 class="album_row">Ten</h3></td></tr>
+               <tr><td>Pearl Jam</td></tr>
+               <tr><td>1992</td></tr>
+               <tr><td>Song: Alive</td></tr>
+               <tr><td>Heidi, Dave, Dave, Nate, Shash, Praneeth.</td></tr>
+               <tr><td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td></tr>
+               <tr><td><span class="glyphicon glyphicon-play-circle"></span></td></tr>
+            </table>
+         </div>
+      </div>
+
+      <div class="item">
+         <img class="center-block" src="media/matisyahu200px.jpg" alt="" />
+         <div class="table">
+            <table class="table table-hover">
+               <tr><td><h3 class="album_row">Ten</h3></td></tr>
+               <tr><td>Pearl Jam</td></tr>
+               <tr><td>1992</td></tr>
+               <tr><td>Song: Alive</td></tr>
+               <tr><td>Heidi, Dave, Dave, Nate, Shash, Praneeth.</td></tr>
+               <tr><td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td></tr>
+               <tr><td><span class="glyphicon glyphicon-play-circle"></span></td></tr>
+            </table>
+         </div>
+      </div>
+
+      <div class="item">
+         <img class="center-block" src="media/pearl_jam200px.jpg" alt="" />
+         <div class="table">
+            <table class="table table-hover">
+               <tr><td><h3 class="album_row">Ten</h3></td></tr>
+               <tr><td>Pearl Jam</td></tr>
+               <tr><td>1992</td></tr>
+               <tr><td>Song: Alive</td></tr>
+               <tr><td>Heidi, Dave, Dave, Nate, Shash, Praneeth.</td></tr>
+               <tr><td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td></tr>
+               <tr><td><span class="glyphicon glyphicon-play-circle"></span></td></tr>
+            </table>
+      </div>
+
+   </div> <!-- end carousel-inner -->
+
+
+   <a class="left carousel-control" href="#covers" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+
+   <a class="right carousel-control" href="#covers" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+</div> <!-- end carousel -->
+
+      <!-- <h1>table experimentation</h1>
+      <div class="table-responsive">
+         <table class="table table-hover">
+            <table>
+            <% @items.each do |item| %>
+            <tr>
+                <td rowspan="3" class="bg-album-image">rowspan="3" for image</td>
+                <td>album</td>
+            </tr>
+            <tr>
+                <td>album</td>
+            </tr>
+            <tr>
+                <td>album</td>
+            </tr>
+         </table>
+      </div> -->
+
+</div> <!-- end container --->
+
+<!-- bootstrap requires jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- carousel, modals etc. won't work without this js  -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- bcSwipe is a lightweight plugin to enable swipe on iOS, Android for carousel -->
+ <script src="js/jquery.bcSwipe.js"></script>
+<!-- my js after bootstrap js -->
+<script src="js/script.js"></script>
+</body>
+</html>
+
+<!-- STYLES FROM SEPARATE CSS FILE THAT WENT WITH THIS -->
+<!--
+.container-fluid {
+   width: 80%;
+}
+.carousel-indicators li {
+   border-color: black;
+   background-color: black;
+}
+.album_row {
+   display: inline-block;
+   margin-right: 1em;
+}
+.glyphicon.glyphicon-play-circle {
+   font-size: 1.5em;
+   margin-left: 1em;
+   vertical-align: middle;
+} -->
