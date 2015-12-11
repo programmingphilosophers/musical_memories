@@ -48,9 +48,9 @@
 
   var click_left = function() {
     if (mem_index - 1 > -1) {
-      $('#album-art').velocity({'left': '+=500px'}, 1000);
-      $('#art' + mem_index).velocity({'opacity': '-=1'}, 1000);
-      $('#album' + mem_index).velocity({'opacity': '-=1'}, 1000);
+      $('#album-art').velocity({'left': '+=500px'}, 500);
+      $('#art' + mem_index).velocity({'opacity': '-=1'}, 500);
+      $('#album' + mem_index).velocity({'opacity': '-=1'}, 500);
       var id = setTimeout(function() {
         $('#art' + mem_index).css({'display': 'none'});
         $('#album' + mem_index).css({'display': 'none'});
@@ -60,10 +60,10 @@
         $('#album' + mem_index).css({'opacity': '0'});
         $('#art' + mem_index).css({'display': 'block'});
         $('#album' + mem_index).css({'display': 'block'});
-        $('#album-art').velocity({'left': '+=500px'}, 1000);
-        $('#art' + mem_index).velocity({'opacity': '+=1'}, 1000);
-        $('#album' + mem_index).velocity({'opacity': '+=1'}, 1000);
-      }, 1100);
+        $('#album-art').velocity({'left': '+=500px'}, 500);
+        $('#art' + mem_index).velocity({'opacity': '+=1'}, 500);
+        $('#album' + mem_index).velocity({'opacity': '+=1'}, 500);
+      }, 600);
     };
   };
 
@@ -90,9 +90,9 @@
 
   var click_right = function() {
     if (mem_index + 1 < new_list.length) {
-      $('#album-art').velocity({'left': '-=500px'}, 1000);
-      $('#art' + mem_index).velocity({'opacity': '-=1'}, 1000);
-      $('#album' + mem_index).velocity({'opacity': '-=1'}, 1000);
+      $('#album-art').velocity({'left': '-=500px'}, 500);
+      $('#art' + mem_index).velocity({'opacity': '-=1'}, 500);
+      $('#album' + mem_index).velocity({'opacity': '-=1'}, 500);
       var id = setTimeout(function() {
         $('#art' + mem_index).css({'display': 'none'});
         $('#album' + mem_index).css({'display': 'none'});
@@ -102,10 +102,10 @@
         $('#album' + mem_index).css({'opacity': '0'});
         $('#art' + mem_index).css({'display': 'block'});
         $('#album' + mem_index).css({'display': 'block'});
-        $('#album-art').velocity({'left': '-=500px'}, 1000);
-        $('#art' + mem_index).velocity({'opacity': '+=1'}, 1000);
-        $('#album' + mem_index).velocity({'opacity': '+=1'}, 1000);
-      }, 1100);
+        $('#album-art').velocity({'left': '-=500px'}, 500);
+        $('#art' + mem_index).velocity({'opacity': '+=1'}, 500);
+        $('#album' + mem_index).velocity({'opacity': '+=1'}, 500);
+      }, 600);
     };
   };
 
