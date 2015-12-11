@@ -20,9 +20,9 @@
     new_list.push(viewModel[latest_index]);
     viewModel.splice(latest_index, 1);
   }
-
 </script>
 
+<!-- Navigation. -->
 <div id="nav"></div>
 <div id="navitems">
   <p><img src="/ic_menu_black_24px.svg"></p>
@@ -83,24 +83,6 @@
   };
 
   $('#left').on("click", click_left);
-
-  $('#album-art').swipe( {
-    //Generic swipe handler for all directions
-    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-      console.log("You swiped " + direction );
-      if (direction == 'left') {
-        click_right;
-      }
-      else if (direction == 'right') {
-        click_left;
-      }
-      else {
-
-      };
-    },
-    //Default is 75px, set to 0 for demo so any distance triggers swipe
-     threshold:30
-  });
 
   var click_right = function() {
     if (mem_index + 1 < new_list.length) {

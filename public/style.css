@@ -39,7 +39,7 @@ html {
 }
 
 #album-art {
-  position: absolute;
+  position: relative;
   top: 20%;
   width: 60%;
 }
