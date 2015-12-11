@@ -1,4 +1,5 @@
 # HEROKU BUGS routes that work and don't
+# I'D NEGLECTED TO SETUP DB'S!
 # account controller work
 logout
 portal
