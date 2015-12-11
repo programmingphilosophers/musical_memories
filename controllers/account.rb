@@ -33,7 +33,7 @@ class AccountController < ApplicationController
       @message = 'Welcome back!'
       redirect '/memories'
     else
-      @message = 'Your password or account is incorrect'
+      @message = 'Your username or password is incorrect'
       erb :login
     end
   end
@@ -78,8 +78,9 @@ class AccountController < ApplicationController
 
   get '/account_info' do
     authorization_check
-    @user_name = session[:current_user].user_name
-    @user_email = session[:current_user].user_email
+    @user_id = session[:current_user].id
+    @user_now = Account.where(id: @user_id)
+
     erb :account_info
   end
 
@@ -89,18 +90,23 @@ class AccountController < ApplicationController
     erb :update_account
   end
 
-  post '/update_account' do
+  # ---------------
+  # This section not working. I could not find a way for my form to find this method.
+  # ---------------
+
+  put '/update_account' do
     authorization_check
 
     @user_id = session[:current_user].id
     @user_now = Account.where(id: @user_id)
-    @user_now.email = params[:email]
-    @user_now.password=(params[:password])
+
+    tempPass = params[:password]
+    @user_now.password=(tempPass)
     @user_now.save
 
     if @user_now.save
 
-      @message = 'Your account was added!'
+      @message = 'Your password was updated!'
     end
     erb :account_info
   end

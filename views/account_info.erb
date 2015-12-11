@@ -9,15 +9,16 @@
 </div>
 
 <div class="middle-content" style="top: 20%">
-  <h5>Create Memory</h5>
-
-  <form id="search-form">
-      <input type="text" id="query" value="" class="form-control" placeholder="Artist"/>
-      <input type="submit" id="search" class="btn btn-primary" value="Search" />
-  </form>
-
-  <div id='write_mem'></div>
-
-  <div id='results'></div>
-
+  <h5>Account Information</h5>
+  <% @user_now.each do |account| %>
+      <p>
+        <%= account.user_name %>
+      </p>
+      <p>
+        <%= account.email %>
+      </p>
+  <% end %>
+  <p>
+    <a href="/update_account">Change your password here.</a>
+  </p>
 </div>
