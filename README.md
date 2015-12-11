@@ -4,7 +4,8 @@
 Remember that album you used to listen to back in the day. Remember the place, the people? Build a book album covers with personal recollections for each with the Musical Memories app.
 
 ### add image of app here
-![alt image text]((https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt image text]('public/memories_screenshot.png')
+![mobile image]('Site on mobile.png.jpeg')
 
 ### Technologies used
 * Sinatra MVC: Similar to shopping list app.
