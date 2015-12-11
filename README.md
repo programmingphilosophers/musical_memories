@@ -5,7 +5,8 @@ Remember that album you used to listen to back in the day. Remember the place, t
 
 ### add image of app here
 ![alt image text]('public/memories_screenshot.png')
-![mobile image]('Site on mobile.png.jpeg')
+![mobile image]('https://github.com/programmingphilosophers/musical_memories/blob/master/public/Site%20on%20mobile.png.jpeg?raw=true')
+
 
 ### Technologies used
 * Sinatra MVC: Similar to shopping list app.
