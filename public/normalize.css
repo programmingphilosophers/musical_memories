@@ -190,7 +190,7 @@ img {
  */
 
 svg:not(:root) {
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* Grouping content
@@ -219,7 +219,7 @@ hr {
  */
 
 pre {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 /**

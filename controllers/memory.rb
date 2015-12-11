@@ -70,7 +70,7 @@ class MemoryController < ApplicationController
     @memory.save
     if @memory.save
       # return view
-      @message = 'You memory was added!'
+      @message = 'You memory was updated!'
     end
 
     erb :message
