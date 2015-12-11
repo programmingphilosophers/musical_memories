@@ -48,9 +48,9 @@
 
   var click_left = function() {
     if (mem_index - 1 > -1) {
-      $('#album-art').velocity({'left': '+=500px'}, 1000);
-      $('#art' + mem_index).velocity({'opacity': '-=1'}, 1000);
-      $('#album' + mem_index).velocity({'opacity': '-=1'}, 1000);
+      $('#album-art').velocity({'left': '+=500px'}, 500);
+      $('#art' + mem_index).velocity({'opacity': '-=1'}, 500);
+      $('#album' + mem_index).velocity({'opacity': '-=1'}, 500);
       var id = setTimeout(function() {
         $('#art' + mem_index).css({'display': 'none'});
         $('#album' + mem_index).css({'display': 'none'});
@@ -60,21 +60,39 @@
         $('#album' + mem_index).css({'opacity': '0'});
         $('#art' + mem_index).css({'display': 'block'});
         $('#album' + mem_index).css({'display': 'block'});
-        $('#album-art').velocity({'left': '+=500px'}, 1000);
-        $('#art' + mem_index).velocity({'opacity': '+=1'}, 1000);
-        $('#album' + mem_index).velocity({'opacity': '+=1'}, 1000);
-      }, 1100);
+        $('#album-art').velocity({'left': '+=500px'}, 500);
+        $('#art' + mem_index).velocity({'opacity': '+=1'}, 500);
+        $('#album' + mem_index).velocity({'opacity': '+=1'}, 500);
+      }, 600);
     };
   };
 
   $('#left').on("click", click_left);
-  jQuery( window ).on( "swiperight", click_left);
+  // jQuery( window ).on( "swiperight", click_left);
+
+  $('#album-art').swipe( {
+    //Generic swipe handler for all directions
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+      console.log("You swiped " + direction );
+      if (direction == 'left') {
+        click_right;
+      }
+      else if (direction == 'right') {
+        click_left;
+      }
+      else {
+
+      };
+    },
+    //Default is 75px, set to 0 for demo so any distance triggers swipe
+     threshold:30
+  });
 
   var click_right = function() {
     if (mem_index + 1 < new_list.length) {
-      $('#album-art').velocity({'left': '-=500px'}, 1000);
-      $('#art' + mem_index).velocity({'opacity': '-=1'}, 1000);
-      $('#album' + mem_index).velocity({'opacity': '-=1'}, 1000);
+      $('#album-art').velocity({'left': '-=500px'}, 500);
+      $('#art' + mem_index).velocity({'opacity': '-=1'}, 500);
+      $('#album' + mem_index).velocity({'opacity': '-=1'}, 500);
       var id = setTimeout(function() {
         $('#art' + mem_index).css({'display': 'none'});
         $('#album' + mem_index).css({'display': 'none'});
@@ -84,13 +102,14 @@
         $('#album' + mem_index).css({'opacity': '0'});
         $('#art' + mem_index).css({'display': 'block'});
         $('#album' + mem_index).css({'display': 'block'});
-        $('#album-art').velocity({'left': '-=500px'}, 1000);
-        $('#art' + mem_index).velocity({'opacity': '+=1'}, 1000);
-        $('#album' + mem_index).velocity({'opacity': '+=1'}, 1000);
-      }, 1100);
+        $('#album-art').velocity({'left': '-=500px'}, 500);
+        $('#art' + mem_index).velocity({'opacity': '+=1'}, 500);
+        $('#album' + mem_index).velocity({'opacity': '+=1'}, 500);
+      }, 600);
     };
   };
 
   $('#right').on("click", click_right);
-  jQuery( window ).on( "swipeleft", click_right);
+  // jQuery( window ).on( "swipeleft", click_right);
+
 </script>
