@@ -95,7 +95,7 @@ class MemoryController < ApplicationController
 
     erb :message
 
-    #redirect '/path/to'
+    #redirect '/memories'
   end
 
 end
