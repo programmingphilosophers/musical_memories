@@ -55,11 +55,12 @@ class AccountController < ApplicationController
     tempMail = params[:email]
     tempPass = params[:password]
 
-      new_user = Account.new
-      new_user.user_name = tempAccount
-      new_user.email = tempMail
-      new_user.password=(tempPass)
-      new_user.save
+    # There used to be a condition check to see if username was already in database, but it wasn't working for some reason.
+    new_user = Account.new
+    new_user.user_name = tempAccount
+    new_user.email = tempMail
+    new_user.password=(tempPass)
+    new_user.save
 
     if new_user.save
       session[:current_user] = new_user
@@ -70,6 +71,10 @@ class AccountController < ApplicationController
     end
     erb :message
   end
+
+  # ---------------
+  # I was beginning to code some account functionality. May or may not still have time.
+  # ---------------
 
   get '/account_info' do
     authorization_check

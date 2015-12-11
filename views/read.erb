@@ -1,7 +1,11 @@
 <script type='text/javascript'>
+  // This variable keeps track of which memory you're on. Very important!
   mem_index = 0;
 
+  // Pulls the user's memories from the model in json format.
   var viewModel = <%= @memories.to_json %>;
+
+  // Performs a sort of the memories for display in chronological order. Memories remain in database in the order entered.
   var latest_year = 0;
   var latest_index = 0;
   var new_list = [];
@@ -26,19 +30,20 @@
   <p><a href="/memories/create"><img src="/ic_search_black_24px.svg"></a></p>
   <p><a href="/memories/mem_list"><img src="/ic_create_black_24px.svg"></a></p>
   <p><a href="/logout"><img src="/ic_open_in_new_black_24px.svg"></a></p>
-  <!-- <img src="/ic_menu_black_24px.svg">
-  <a href="/memories"><img src="/ic_home_black_24px.svg"></a>
-  <a href="/memories/create"><img src="/ic_search_black_24px.svg"></a>
-  <a href="/memories/mem_list"><img src="/ic_create_black_24px.svg"></a>
-  <a href="/logout"><img src="/ic_open_in_new_black_24px.svg"></a> -->
 </div>
 
 <div id="left"></div>
 <div id="right"></div>
 
+<!-- This is where the memories are displayed! -->
 <div class="middle-content" id="album-art"></div>
 
 <script type="text/javascript">
+
+  // ---------------
+  // This section loops through the user's musical memories array to generate them on the page. Only one is displayed at a time.
+  // ---------------
+
   for (var i = 0; i < new_list.length; i++) {
     var tempArt = '<div class="albumart" id="art' + i + '"><img src="' + new_list[i].img_url + '" style="max-width: 100%"></div>';
 
@@ -48,24 +53,29 @@
     $('#album-art').append(tempMem);
   }
 
+  // First memory is displayed. Doesn't matter if no memories exist yet.
   $('#art0').css({'display': 'block'});
   $('#album0').css({'display': 'block'});
 
+  // ---------------
+  // This section deals with navigating through the memories. The memories used to slide through as though the user is scrolling, but the animation looks super-janky on iPhone, so all that's left are the opacity manipulations.
+  // ---------------
+
   var click_left = function() {
     if (mem_index - 1 > -1) {
-      $('#album-art').velocity({'left': '+=100px'}, 500);
+      // $('#album-art').velocity({'left': '+=100px'}, 500);
       $('#art' + mem_index).velocity({'opacity': '-=1'}, 500);
       $('#album' + mem_index).velocity({'opacity': '-=1'}, 500);
       var id = setTimeout(function() {
         $('#art' + mem_index).css({'display': 'none'});
         $('#album' + mem_index).css({'display': 'none'});
-        $('#album-art').css({'left': '-=200px'});
+        // $('#album-art').css({'left': '-=200px'});
         mem_index -= 1;
         $('#art' + mem_index).css({'opacity': '0'});
         $('#album' + mem_index).css({'opacity': '0'});
         $('#art' + mem_index).css({'display': 'block'});
         $('#album' + mem_index).css({'display': 'block'});
-        $('#album-art').velocity({'left': '+=100px'}, 500);
+        // $('#album-art').velocity({'left': '+=100px'}, 500);
         $('#art' + mem_index).velocity({'opacity': '+=1'}, 500);
         $('#album' + mem_index).velocity({'opacity': '+=1'}, 500);
       }, 600);
@@ -73,7 +83,6 @@
   };
 
   $('#left').on("click", click_left);
-  // jQuery( window ).on( "swiperight", click_left);
 
   $('#album-art').swipe( {
     //Generic swipe handler for all directions
@@ -95,19 +104,19 @@
 
   var click_right = function() {
     if (mem_index + 1 < new_list.length) {
-      $('#album-art').velocity({'left': '-=100px'}, 500);
+      // $('#album-art').velocity({'left': '-=100px'}, 500);
       $('#art' + mem_index).velocity({'opacity': '-=1'}, 500);
       $('#album' + mem_index).velocity({'opacity': '-=1'}, 500);
       var id = setTimeout(function() {
         $('#art' + mem_index).css({'display': 'none'});
         $('#album' + mem_index).css({'display': 'none'});
-        $('#album-art').css({'left': '+=200px'});
+        // $('#album-art').css({'left': '+=200px'});
         mem_index += 1;
         $('#art' + mem_index).css({'opacity': '0'});
         $('#album' + mem_index).css({'opacity': '0'});
         $('#art' + mem_index).css({'display': 'block'});
         $('#album' + mem_index).css({'display': 'block'});
-        $('#album-art').velocity({'left': '-=100px'}, 500);
+        // $('#album-art').velocity({'left': '-=100px'}, 500);
         $('#art' + mem_index).velocity({'opacity': '+=1'}, 500);
         $('#album' + mem_index).velocity({'opacity': '+=1'}, 500);
       }, 600);
@@ -115,6 +124,5 @@
   };
 
   $('#right').on("click", click_right);
-  // jQuery( window ).on( "swipeleft", click_right);
 
 </script>
