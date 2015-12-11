@@ -79,14 +79,17 @@ class AccountController < ApplicationController
   get '/account_info' do
     authorization_check
     @user_id = session[:current_user].id
-    @user_now = Account.where(id: @user_id)
+    p "USER OBJECT============="
+    p @user_now = Account.where(id: @user_id)
 
     erb :account_info
   end
 
-  get '/update_account' do
+  get '/update_account/:id' do
     authorization_check
-
+    p "USER OBJECT==========="
+    p@user_now = Account.find(params[:id])
+    # @user_now = Account.find(session[:current_user].id)
     erb :update_account
   end
 
@@ -94,12 +97,11 @@ class AccountController < ApplicationController
   # This section not working. I could not find a way for my form to find this method.
   # ---------------
 
-  put '/update_account' do
+  post '/update_account/:id' do
     authorization_check
 
-    @user_id = session[:current_user].id
-    @user_now = Account.where(id: @user_id)
-
+    # @user_now = Account.find(params[:id])
+    @user_now = Account.find(session[:current_user].id)
     tempPass = params[:password]
     @user_now.password=(tempPass)
     @user_now.save
@@ -107,7 +109,10 @@ class AccountController < ApplicationController
     if @user_now.save
 
       @message = 'Your password was updated!'
+      redirect '/account_info'
+    else
+      redirect "/update_account/#{session[:current_user].id}"
     end
-    erb :account_info
+    # erb :account_info
   end
 end
