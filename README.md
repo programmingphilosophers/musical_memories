@@ -9,8 +9,17 @@ example:
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 ### Technologies used
-* Bootstrap: Adam created a carousel prototype with bootstrap to scroll through images and related text table. This was modified to fit existing site look.
 * Sinatra MVC: Similar to shopping list app.
+* Sinatra routing: To get, post and execute ruby code blocks, interacting with .erb files etc.
+* Active Record ORM: Used to map application to database with postrgres.
+* BCrypt: BCrypt::Password.create(pwd) used to create (encrypted) "password_digest" value stored in database. Authenticate method in Account.rb model checks password match at login.
+* Javascript: Used for DOM interactions (eventListeners, interactive DOM modifications, ajax call...)
+* HTML forms: To accept user input and transmit parameters both hidden and seen.
+* Ajax call to spotify api with user supplied artist parameter.
+* Bootstrap: Adam created a carousel prototype with bootstrap to scroll through images and related text table. This was modified to fit existing site styles created with Skeleton.
+* Digital Ocean: Droplet configured and associated with this github repo.
+
+
 *
 ### Project Approach
 

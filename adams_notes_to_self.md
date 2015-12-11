@@ -20,6 +20,8 @@ update_account (redirect to portal)
 /destroy/:id
 /destroy
 
+
+
 # APPLICATION CONTROLLER
 * usual stuff.
 
