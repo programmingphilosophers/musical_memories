@@ -88,14 +88,10 @@ class AccountController < ApplicationController
   get '/update_account/:id' do
     authorization_check
     p "USER OBJECT==========="
-    p@user_now = Account.find(params[:id])
+    p @user_now = Account.find(params[:id])
     # @user_now = Account.find(session[:current_user].id)
     erb :update_account
   end
-
-  # ---------------
-  # This section not working. I could not find a way for my form to find this method.
-  # ---------------
 
   post '/update_account/:id' do
     authorization_check
