@@ -1,6 +1,6 @@
 # Musical Memories app
 
-### Create memories [here](http://45.55.238.138/).
+### Create memories
 Remember that album you used to listen to back in the day. Remember the place, the people? Build a book album covers with personal recollections for each with the Musical Memories app.
 
 ### add image of app here
